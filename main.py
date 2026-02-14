@@ -100,7 +100,7 @@ def main() -> None:
     db = Database(DATABASE_PATH)
 
     # Создаём приложение
-    app = Application.builder().token(BOT_TOKEN).build()
+    app = Application.builder().token(BOT_TOKEN).job_queue(None).build()
 
     # Сохраняем БД в контексте бота
     app.bot_data["db"] = db
